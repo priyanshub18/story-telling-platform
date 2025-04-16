@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Content.css';
-const Content = ({ Title, Author, Image, Link }) => {
+
+const Content = ({ Title, Author, Image, Link, Story }) => {
+  const [showStory, setShowStory] = useState(false);
+
   const handleOnClick = () => {
-    if (Link) {
-      window.open(Link, '_blank');
-    }
+    setShowStory((prev) => !prev);
   };
 
   return (
@@ -12,7 +13,13 @@ const Content = ({ Title, Author, Image, Link }) => {
       <div className='Info'>
         <h3>{Title}</h3>
         <h4>By: {Author}</h4>
-        <button onClick={handleOnClick}>Read More</button>
+        <button onClick={handleOnClick}>
+          {showStory ? 'Hide Story' : 'Read More'}
+        </button>
+
+        <div className={`story-box ${showStory ? 'slide-down' : 'slide-up'}`}>
+          <p>{Story}</p>
+        </div>
       </div>
       <img src={Image} alt="Content"/>
     </div>
