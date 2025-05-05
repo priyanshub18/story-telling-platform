@@ -1,0 +1,74 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.container{
+    padding: min(1em,2%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(8, 8, 23);
+    border-radius: 1rem;
+}
+.container .Info{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: max-content;
+}
+.container .Info h3{
+    margin: 1%;
+    margin-bottom: 2rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: none;
+}
+.container .Info h4{
+    margin: 1%;
+    background: none;
+    font-size: 1.2em;
+    font-weight: normal;
+    opacity: 0.8;
+}
+.container .Info button{
+    padding: .4em .7em;
+    border: none;
+    margin: 1rem;
+    max-width: fit-content;
+    border-radius: 1rem;
+    background-color: rgb(39, 37, 45);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container .Info img{
+    max-width : 100%;
+    height : auto;
+    aspect-ratio : 1/1;
+    object-fit : cover;
+    border-radius: 2rem;
+}
+.story-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    margin-top: 1rem;
+    background-color: rgb(22, 22, 35);
+    color: antiquewhite;
+    padding: 0 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.slide-down {
+    max-height: 300px; /* You can increase based on how long the story is */
+    opacity: 1;
+    padding: 1rem;
+}
+
+.slide-up {
+    padding: 0 1rem;
+}

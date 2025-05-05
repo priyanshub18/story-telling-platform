@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(9, 9, 21);
+    color: antiquewhite;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Discover Container */
+.Discover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: min(6em,6%);
+    padding-right: min(6em,6%);
+    padding-top: min(3em,4%);
+    padding-bottom: min(3em,4%);
+}
+
+/* First Header */
+.First-header {
+    display: flex;
+    width: 100%;
+    display: grid;
+}
+
+.First-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+/* Categories */
+.Categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+}
+
+.Categories button {
+    padding: .5rem 1rem;
+    border: none;
+    background-color: #1a1a2e;
+    color: antiquewhite;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+}
+
+.Categories button:hover {
+    background-color: #292948;
+    transform: scale(1.1);
+}
+
+/* Second Header */
+.Second-header {
+    width: 100%;
+    display: grid;
+    padding-top:3%;
+}
+
+/* Sorting Section */
+.Second-header h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.Sort-Bar {
+    width: 100%;
+    margin: 1%;
+    border-radius: 2rem;
+    background-color:#292948 ;
+    padding: .4em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Sort-Bar a {
+    width: 100%;
+    padding:.5rem 1.1rem;
+    border: none;
+    background-color: #292948;
+    color: antiquewhite;
+    font-size: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+.Sort-Bar a:hover {
+    background-color: #3b3b5c;
+}
+.Sort-Bar a.isActive {
+    background-color: #0d0d1f;
+    transition: sliding 0.3s ease-in-out forwards;
+    font-weight: bold;
+}
+@keyframes sliding {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Search Bar */
+.Search-Bar {
+    width: 90%;
+    margin: 1%;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.Search-Bar input {
+    width: 100%;
+    padding: min(1em, 4.5%);
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: #12122d;
+    color: antiquewhite;
+    outline: none;
+    text-indent: 8rem;
+}
+
+.Search-Bar input::placeholder {
+    color: #a5a5c3;
+}
+
+.Search-Bar input {
+    background-image: url(../../assets/images/SEARCH_ICON.png);
+    background-size: 2rem;
+    background-position: 4rem center;
+    background-repeat: no-repeat;
+}
+
+
+/* Filter Bar */
+.Filter-Bar {
+    width: 100%;
+    margin-left:2%;
+    margin-right:2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(max-width,1fr));
+    gap: 2rem;
+}
+
+/* Pagination */
+.Pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.Pagination button {
+    padding: 8px 14px;
+    border: none;
+    background-color: #22223b;
+    color: antiquewhite;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.Pagination button:hover {
+    background-color: #3b3b5c;
+}
+
+.Pagination button:disabled {
+    background-color: #2a2a40;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .First-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .Categories button {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .Sort-Bar button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .Search-Bar input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .First-header h1 {
+        font-size: 2rem;
+    }
+
+    .Categories button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .Sort-Bar button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .Search-Bar input {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+}
